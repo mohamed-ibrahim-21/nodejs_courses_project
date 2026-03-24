@@ -13,7 +13,9 @@ const app = express();
 
 //Connection to Data Base
 const url = process.env.MONGO_URL
-mongoose.connect(url).then( () => {console.log("Connect To Data Base")})
+mongoose.connect(url)
+    .then(() => console.log("Connected to DB"))
+    .catch(err => console.log(err));
 
 ////Apply Middlewares BodyParser To Can Read Post API
 app.use(cors());
