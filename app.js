@@ -20,6 +20,9 @@ app.use(cors());
 app.use(express.json());
 
 //Routers
+app.get('/', (req, res) => {
+    res.send('Server is running 🚀');
+});
 app.use('/api/courses', courseRoute);
 app.use('/api/users', userRoute);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
