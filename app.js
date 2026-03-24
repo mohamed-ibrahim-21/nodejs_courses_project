@@ -37,6 +37,5 @@ app.use((error, req, res, next)=>{
     return res.status(error.statusCode || 500).json({status : error.statusText || httpStatusText.ERROR , message : error.message})
 })
 
-const PORT = process.env.PORT || 5000;
 // Listening For Server
-app.listen(PORT, () => {console.log('listing to port 5000')})
+app.listen(process.env.PORT, () => {console.log('listing to port 5000')})
